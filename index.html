@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#231D1A">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ECE4D8">
+<title>Alan Remarc</title>
+<meta name="description" content="Alan Remarc is Vlad Pazych's tool workshop, building tools that make people more powerful. First out: Baba Voss, to build and organize your project's tooling with and for agents.">
+<meta property="og:title" content="Alan Remarc">
+<meta property="og:description" content="A tool workshop building tools that make people more powerful. First out: Baba Voss.">
+<meta property="og:image" content="https://alanremarc.com/og.png">
+<meta property="og:url" content="https://alanremarc.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@alanremarc">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: dark light;
+    --surface:#231D1A; --ink:#C2A47C; --text:#E3DACF; --muted:#A09485; --soft:#2E2723;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){ --surface:#ECE4D8; --ink:#634A38; --text:#332922; --muted:#6F6356; --soft:#E0D5C5; color-scheme:light }
+  }
+  :root[data-theme="light"]{ --surface:#ECE4D8; --ink:#634A38; --text:#332922; --muted:#6F6356; --soft:#E0D5C5; color-scheme:light }
+  :root[data-theme="dark"]{ --surface:#231D1A; --ink:#C2A47C; --text:#E3DACF; --muted:#A09485; --soft:#2E2723; color-scheme:dark }
+
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--surface); color:var(--text);
+    font-family:'IBM Plex Serif',Georgia,serif; font-size:18px; line-height:1.65;
+    min-height:100vh; display:flex; flex-direction:column; justify-content:center;
+    padding:48px 0;
+    transition:background-color .2s ease,color .2s ease;
+  }
+  .wrap{width:100%; max-width:38rem; margin:0 auto; padding:0 24px}
+
+  header{padding:0 0 28px}
+  header .wrap{display:flex; align-items:center; justify-content:space-between}
+  .brand{display:block; color:inherit; text-decoration:none}
+  .brand svg{height:20px; width:auto; display:block}
+  .lk-b{stroke-width:.358; stroke-linejoin:round}
+  @media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .lk-b{stroke-width:0} }
+  :root[data-theme="light"] .lk-b{stroke-width:0}
+
+  .theme{width:28px; height:28px; border:0; background:transparent; color:var(--muted); cursor:pointer; display:grid; place-items:center; padding:0; border-radius:6px; margin-right:-6px}
+  .theme:hover{color:var(--ink)}
+  .theme:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+  .theme svg{width:16px; height:16px; display:none}
+  .theme .sun{display:block}
+  :root[data-theme="light"] .theme .sun{display:none}
+  :root[data-theme="light"] .theme .moon{display:block}
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]) .theme .sun{display:none}
+    :root:not([data-theme="dark"]) .theme .moon{display:block}
+  }
+
+  main{padding:0}
+  article p{margin:0 0 24px; font-size:20px; line-height:1.7}
+  article p:last-child{margin-bottom:0}
+  article a{color:var(--ink); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px}
+  article a:hover{text-decoration-thickness:2px}
+
+  .products{margin-top:32px}
+  .card{display:block; font-family:'IBM Plex Mono',monospace; background:var(--soft); border-radius:8px; padding:14px 16px; margin:0 -16px; color:inherit; text-decoration:none; transition:background-color .15s ease}
+  .card:hover{background:color-mix(in srgb, var(--soft), var(--muted) 12%)}
+  .card-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 10px; font-size:14px; margin:0 0 4px}
+  .card-head b{font-weight:600}
+  .card-head .go{margin-left:auto; color:var(--ink); font-size:13px}
+  .card p{margin:0; font-size:13px; line-height:1.6; color:var(--muted)}
+
+  footer{padding:36px 0 0}
+  footer .wrap{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted)}
+  footer a{color:inherit; text-decoration:none}
+  footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Alan Remarc">
+      <svg viewBox="50 30 765 100" aria-hidden="true"><mask id="lk"><rect x="50" y="30" width="765" height="100" fill="#fff"/><g transform="translate(50.00 30.00) scale(1.0000)"><path fill="#000" stroke="#000" class="lk-b" transform="translate(14.09 86.45) scale(1.1969)" d="M39.500-18Q35.500-18 32.600-19.950Q29.700-21.900 27.100-25.400Q25-28.200 23.500-30.200Q22-32.200 20-32.200Q17.100-32.200 15.700-28.500Q14.300-24.800 13.300-19.100L4.100-20.900Q5.700-32.200 9.700-37.550Q13.700-42.900 20.500-42.900Q24.500-42.900 27.400-40.950Q30.300-39 32.900-35.500Q35-32.700 36.500-30.700Q38-28.700 40-28.700Q42.900-28.700 44.300-32.400Q45.700-36.100 46.700-41.800L55.900-40Q54.300-28.700 50.300-23.350Q46.300-18 39.500-18"/></g></mask><rect x="50.00" y="30.00" width="100.00" height="100.00" rx="50.00" fill="var(--ink)" mask="url(#lk)"/><path fill="var(--ink)" transform="translate(195.00 114.90)" d="M58.80 0L44.90 0L40-17.70L19.30-17.70L14.50 0L1.30 0L20.90-69.80L39.10-69.80L58.80 0M37.80-28.40L30.10-56.90L29.30-56.90L21.60-28.40 M67.20 0L67.20-10.10L83.60-10.10L83.60-63.90L67.20-63.90L67.20-74L96.40-74L96.40-10.10L112.90-10.10L112.90 0 M176.50 0L169 0Q164.30 0 161.75-2.35Q159.20-4.70 158.70-8.90L158.20-8.90Q156.80-4.10 152.70-1.45Q148.60 1.20 142.60 1.20Q134.80 1.20 130.20-2.90Q125.60-7 125.60-14.30Q125.60-29.90 148.50-29.90L157.60-29.90L157.60-33.30Q157.60-38.20 155.20-40.70Q152.80-43.20 147.40-43.20Q142.50-43.20 139.50-41.30Q136.50-39.40 134.40-36.40L127.10-42.60Q129.50-46.90 134.85-49.85Q140.20-52.80 148.70-52.80Q158.90-52.80 164.65-48.05Q170.40-43.30 170.40-33.90L170.40-9.60L176.50-9.60L176.50 0M146.90-7.60Q151.50-7.60 154.55-9.75Q157.60-11.90 157.60-15.60L157.60-22.50L148.80-22.50Q138.30-22.50 138.30-15.90L138.30-13.90Q138.30-10.80 140.60-9.20Q142.90-7.60 146.90-7.60 M200.30 0L187.50 0L187.50-51.60L200.30-51.60L200.30-42.50L200.80-42.50Q202.50-46.70 206.05-49.75Q209.60-52.80 215.90-52.80Q223.50-52.80 228.25-47.75Q233-42.70 233-33.30L233 0L220.20 0L220.20-31.50Q220.20-42.70 210.50-42.70Q208.50-42.70 206.70-42.20Q204.90-41.70 203.45-40.65Q202-39.60 201.15-38.10Q200.30-36.60 200.30-34.50 M281.10-27.10L281.10 0L268 0L268-69.80L294.50-69.80Q304.70-69.80 310.10-64Q315.50-58.20 315.50-48.20Q315.50-40.50 311.95-35.25Q308.40-30 301.80-28.60L316.70 0L302.30 0L289-27.10L281.10-27.10M281.10-37.30L291.80-37.30Q297.10-37.30 299.40-39.45Q301.70-41.60 301.70-46.30L301.70-50.10Q301.70-54.80 299.40-56.95Q297.10-59.10 291.80-59.10L281.10-59.10 M351.20 1.20Q345 1.20 340.20-0.70Q335.40-2.60 332.15-6.10Q328.90-9.60 327.20-14.55Q325.50-19.50 325.50-25.70Q325.50-32 327.25-37Q329-42 332.20-45.50Q335.40-49 339.95-50.90Q344.50-52.80 350.20-52.80Q355.80-52.80 360.30-50.95Q364.80-49.10 367.95-45.70Q371.10-42.30 372.80-37.50Q374.50-32.70 374.50-26.90L374.50-22.70L338.30-22.70L338.30-21.40Q338.30-15.80 341.80-12.35Q345.30-8.90 351.60-8.90Q356.40-8.90 359.85-10.85Q363.30-12.80 365.60-16L372.90-8.70Q370.10-4.60 364.75-1.70Q359.40 1.20 351.20 1.20M350.30-43.40Q344.90-43.40 341.60-40Q338.30-36.60 338.30-31L338.30-30.30L361.70-30.30L361.70-31.20Q361.70-36.80 358.65-40.10Q355.60-43.40 350.30-43.40 M394.30 0L383.70 0L383.70-51.60L394.30-51.60L394.30-44.50L394.90-44.50Q396.10-47.90 398.35-50.35Q400.60-52.80 404.70-52.80Q408.60-52.80 410.90-50.55Q413.20-48.30 413.90-44.20L414.40-44.20Q415.70-47.70 418.25-50.25Q420.80-52.80 425.50-52.80Q431.20-52.80 433.70-48.70Q436.20-44.60 436.20-36.60L436.20 0L425.70 0L425.70-35.10Q425.70-39.60 424.45-41.40Q423.20-43.20 420.70-43.20Q418.40-43.20 416.85-41.70Q415.30-40.20 415.30-37.10L415.30 0L404.70 0L404.70-35.10Q404.70-39.60 403.50-41.40Q402.30-43.20 399.80-43.20Q397.40-43.20 395.85-41.70Q394.30-40.20 394.30-37.10 M496.50 0L489 0Q484.30 0 481.75-2.35Q479.20-4.70 478.70-8.90L478.20-8.90Q476.80-4.10 472.70-1.45Q468.60 1.20 462.60 1.20Q454.80 1.20 450.20-2.90Q445.60-7 445.60-14.30Q445.60-29.90 468.50-29.90L477.60-29.90L477.60-33.30Q477.60-38.20 475.20-40.70Q472.80-43.20 467.40-43.20Q462.50-43.20 459.50-41.30Q456.50-39.40 454.40-36.40L447.10-42.60Q449.50-46.90 454.85-49.85Q460.20-52.80 468.70-52.80Q478.90-52.80 484.65-48.05Q490.40-43.30 490.40-33.90L490.40-9.60L496.50-9.60L496.50 0M466.90-7.60Q471.50-7.60 474.55-9.75Q477.60-11.90 477.60-15.60L477.60-22.50L468.80-22.50Q458.30-22.50 458.30-15.90L458.30-13.90Q458.30-10.80 460.60-9.20Q462.90-7.60 466.90-7.60 M507.50 0L507.50-10.10L520.30-10.10L520.30-41.50L507.50-41.50L507.50-51.60L533.10-51.60L533.10-37.50L533.90-37.50Q534.60-40.20 535.85-42.75Q537.10-45.30 539.05-47.25Q541-49.20 543.80-50.40Q546.60-51.60 550.50-51.60L556.10-51.60L556.10-39.60L545.50-39.60Q539.70-39.60 536.40-36.20Q533.10-32.80 533.10-27.50L533.10-10.10L546.90-10.10L546.90 0 M592 1.20Q586.10 1.20 581.40-0.70Q576.70-2.60 573.45-6.10Q570.20-9.60 568.45-14.60Q566.70-19.60 566.70-25.80Q566.70-32 568.45-37Q570.20-42 573.45-45.50Q576.70-49 581.35-50.90Q586-52.80 591.90-52.80Q600.10-52.80 605.10-49.40Q610.10-46 612.70-40.40L602.80-35Q601.40-38.30 598.85-40.35Q596.30-42.40 591.90-42.40Q586.20-42.40 583.15-39.10Q580.10-35.80 580.10-30.10L580.10-21.50Q580.10-15.90 583.15-12.55Q586.20-9.20 592.10-9.20Q596.70-9.20 599.45-11.30Q602.20-13.40 603.90-16.90L613.50-11.20Q610.90-5.70 605.65-2.25Q600.40 1.20 592 1.20"/></svg>
+    </a>
+    <button class="theme" id="theme" type="button" aria-label="Switch to light theme" title="Theme">
+      <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <article class="wrap">
+    <p>Hi, I'm Vlad. I'm obsessed with building tools that make people more powerful. <strong>Alan Remarc</strong> is my tool workshop.</p>
+  </article>
+
+  <section class="wrap products">
+    <a class="card" href="https://babavoss.org">
+      <div class="card-head"><b>Baba Voss</b><span class="go">babavoss.org →</span></div>
+      <p>Build and organize your project's tooling with and for agents.</p>
+    </a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><a href="https://x.com/alanremarc" rel="me">x.com/alanremarc</a></div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById("theme"), root=document.documentElement, mq=matchMedia("(prefers-color-scheme: light)");
+  function current(){ return root.dataset.theme || (mq.matches?"light":"dark"); }
+  function label(){ btn.setAttribute("aria-label", current()==="dark" ? "Switch to light theme" : "Switch to dark theme"); }
+  btn.addEventListener("click", function(){
+    var next = current()==="dark" ? "light" : "dark";
+    if ((next==="light")===mq.matches) { delete root.dataset.theme; try{localStorage.removeItem("theme")}catch(e){} }
+    else { root.dataset.theme = next; try{localStorage.setItem("theme", next)}catch(e){} }
+    label();
+  });
+  mq.addEventListener("change", label);
+  label();
+})();
+</script>
+</body>
+</html>
